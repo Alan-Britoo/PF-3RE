@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
-import { LocationIcon, SignalIcon } from "./components/Icons";
+import { LocationIcon} from "./components/Icons";
 import { Search } from "./components/Search";
-import {
-  getForecast,
-  getForecastByCords,
-  getWeather,
-  getWeatherByCords,
-} from "./components/api/fetch";
+import {getForecast,getForecastByCords,getWeather,getWeatherByCords} from "../public/fetch";
 import { addPlaceToLocalStorage } from "./utils/storage";
 import "./app.css";
 import Hightlights from "./components/Hightlights";
 import backGNuves from "../public/Cloud-background.png";
+
 import Temperatura from "./components/Temperatura";
 import Weak from "./components/Weak";
+
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -176,7 +173,7 @@ function App() {
                 max-sm:pl-[180px]
             sm:w-[850px]"
             >
-              {/* bg-transparent */}
+              
               <img
                 className="h-auto opacity-10  
                   max-sm:h-[450px]
@@ -191,9 +188,7 @@ function App() {
             <div
               className="absolute mt-5 top-[270px]
             
-            sm:top-[400px] max-sm:top-[375px]
-            "
-            >
+            sm:top-[400px] max-sm:top-[375px]">
               <p className="text-[144px] font-medium">
                 {isFahrenheit
                   ? Math.floor(weatherData.temp * (9 / 5) + 32)
