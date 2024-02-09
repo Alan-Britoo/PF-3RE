@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ExitIcon, Mouse, RightIcon, SearchIcon, SignalIcon } from "./Icons";
+import { ExitIcon, RightIcon, SearchIcon, SignalIcon } from "./Icons";
 import { getPlacesFromLocalStorage } from "../Storage/storage";
 
 import hola from '../../public/1.png'
@@ -57,7 +57,7 @@ export function Search({ inputSearch, cords }) {
         <button
           className="flex justify-center items-center top-6 right-4 bg-gray-3 rounded-full p-3 w-[40px] h-[40px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={cords}
-          style={{ cursor: `url('${<Mouse/>}'), auto` }}
+          style={{ cursor: `url('/cursor (1).png'), auto` }}
         >
           <SignalIcon />
         </button>
