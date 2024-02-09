@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { ExitIcon, RightIcon, SearchIcon, SignalIcon } from "./Icons";
-import { getPlacesFromLocalStorage } from "../utils/storage";
+import { getPlacesFromLocalStorage } from "../Storage/storage";
 
 export function Search({ inputSearch, cords }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchPlace, setSearchPlace] = useState("");
   const [places, setPlaces] = useState(null);
+  const [isFocused, setIsFocused] = useState(false);
 
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -30,21 +31,25 @@ export function Search({ inputSearch, cords }) {
     setPlaces(getPlacesFromLocalStorage());
   }, []);
   return (
-    <header className="bg-blue-1 w-full 
+    <header
+      className="bg-blue-1 w-full 
     
-    ">
-      <div className="flex w-[100%] pt-[18px] px-4  justify-between
+    "
+    >
+      <div
+        className="flex w-[100%] pt-[18px] px-4  justify-between
       sm:w-[100%]
-      ">
+      "
+      >
         <button
           className="bg-gray-3 h-10 max-sm:w-[161px]
-          sm:w-[190px]"
+          sm:w-[190px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={toggleMenu}
         >
           Search for places
         </button>
         <button
-          className="flex justify-center items-center top-6 right-4 bg-gray-3 rounded-full p-3 w-[40px] h-[40px]"
+          className="flex justify-center items-center top-6 right-4 bg-gray-3 rounded-full p-3 w-[40px] h-[40px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={cords}
         >
           <SignalIcon />
@@ -62,17 +67,26 @@ export function Search({ inputSearch, cords }) {
           <ExitIcon />
         </button>
         <form className="flex gap-3" onSubmit={search}>
-          <div className="flex items-center gap-3 border w-full border-gray-1 pl-3 p-1">
+          <div
+            className={`flex items-center gap-3 border w-full ${
+              isFocused ? "border-red-500" : "border-gray-1"
+            } pl-3 p-1`}
+          >
             <SearchIcon />
             <input
               className="bg-transparent w-full py-2 focus:outline-none"
-              placeholder="Colombia"
+              placeholder="Ciudad"
               type="text"
               value={searchPlace}
               onChange={(event) => setSearchPlace(event.target.value)}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
             />
           </div>
-          <button type="submit" className="bg-blue-3 px-5 py-3">
+          <button
+            type="submit"
+            className="bg-blue-3 px-5 py-3 transition duration-300 ease-in-out transform hover:bg-red-500 "
+          >
             Search
           </button>
         </form>

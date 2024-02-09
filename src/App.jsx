@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { LocationIcon} from "./components/Icons";
 import { Search } from "./components/Search";
 import {getForecast,getForecastByCords,getWeather,getWeatherByCords} from "../public/fetch";
-import { addPlaceToLocalStorage } from "./utils/storage";
+import { addPlaceToLocalStorage } from "./Storage/storage";
 import "./app.css";
 import Hightlights from "./components/Hightlights";
 import backGNuves from "../public/Cloud-background.png";
-
 import Temperatura from "./components/Temperatura";
 import Weak from "./components/Weak";
 
@@ -46,7 +45,7 @@ function App() {
 
   const changeWeather = (data) => {
     const { weather, main, visibility, wind, name } = data;
-    const date = new Date(); // Obtener la fecha actual
+    const date = new Date(); 
     const dateOptions = { weekday: "short", day: "numeric", month: "short" };
 
     setWeatherData({
@@ -69,7 +68,7 @@ function App() {
   const changeForecast = (data) => {
     const dailyForecast = [];
 
-    // Iterar sobre cada segmento de tiempo en el pronóstico extendido
+    
     data.list.forEach((segment) => {
       const fechaTexto = segment.dt_txt;
       const fecha = new Date(fechaTexto);
@@ -78,7 +77,7 @@ function App() {
         day: "numeric",
         month: "short",
       });
-      // Si es un nuevo día, inicializar el objeto para ese día
+      
       if (!dailyForecast[dia]) {
         dailyForecast[dia] = {
           minTemp: segment.main.temp,
@@ -86,7 +85,7 @@ function App() {
           weather: segment.weather[0].main,
         };
       } else {
-        // Actualizar las temperaturas mínima y máxima si corresponde
+        
         dailyForecast[dia].minTemp = Math.min(
           dailyForecast[dia].minTemp,
           segment.main.temp
@@ -103,19 +102,15 @@ function App() {
   };
 
   const cords = () => {
-    // Verificar si el navegador soporta la geolocalización
     if ("geolocation" in navigator) {
-      // Obtener la ubicación actual del usuario
       navigator.geolocation.getCurrentPosition(function (position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
 
-        // Llamar a una función para obtener datos del clima, por ejemplo
         getWeatherByCords(lat, lon).then((data) => changeWeather(data));
         getForecastByCords(lat, lon).then((data) => changeForecast(data));
       });
     } else {
-      // El navegador no soporta la geolocalización
       console.log("La geolocalización no está disponible en este navegador.");
     }
   };
@@ -153,11 +148,7 @@ function App() {
         >
           <div className="flex flex-col items-center relative">
             <img
-              className="w-36 absolute m-[35px] mt-[70px]
-
-              sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]
-              
-              "
+              className="w-36 absolute m-[35px] mt-[70px] sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]"
               src={`/${weatherData.weather}.png`}
               alt={`/${weatherData.weather}`}
               style={{
