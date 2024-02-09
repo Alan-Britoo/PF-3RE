@@ -20,11 +20,14 @@ export function Search({ inputSearch, cords }) {
   const search = (event) => {
     event.preventDefault();
     inputSearch(searchPlace);
+    setSearchPlace("")
+    setPlaces(getPlacesFromLocalStorage())
   };
 
   const selectAndClose = (place) => {
     inputSearch(place);
     toggleMenu();
+    
   };
 
   useEffect(() => {
