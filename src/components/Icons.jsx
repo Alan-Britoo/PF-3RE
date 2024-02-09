@@ -44,6 +44,9 @@ function ArrowIcon () {
     </svg>
   )
 }
+function Mouse () {
+  return( '/public/cursor (1).png')
+}
 
 export {
   ExitIcon,
@@ -51,5 +54,6 @@ export {
   LocationIcon,
   SignalIcon,
   SearchIcon,
-  ArrowIcon
+  ArrowIcon,
+  Mouse
 }

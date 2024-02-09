@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { ExitIcon, RightIcon, SearchIcon, SignalIcon } from "./Icons";
+import { ExitIcon, Mouse, RightIcon, SearchIcon, SignalIcon } from "./Icons";
 import { getPlacesFromLocalStorage } from "../Storage/storage";
+
+import hola from '../../public/1.png'
 
 export function Search({ inputSearch, cords }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,14 +50,14 @@ export function Search({ inputSearch, cords }) {
           className="bg-gray-3 h-10 max-sm:w-[161px]
           sm:w-[190px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={toggleMenu}
-          style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
+          style={{ cursor: `url('/cursor (1).png'), auto` }}
         >
-          Search for places
+          Search for places 
         </button>
         <button
           className="flex justify-center items-center top-6 right-4 bg-gray-3 rounded-full p-3 w-[40px] h-[40px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={cords}
-          style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
+          style={{ cursor: `url('${<Mouse/>}'), auto` }}
         >
           <SignalIcon />
         </button>
