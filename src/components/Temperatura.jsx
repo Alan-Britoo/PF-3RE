@@ -10,7 +10,8 @@ export default function Temperatura({ changeF, changeC }) {
   };
 
   return (
-    <div className="absolute top-4 right-[75px] hidden md:block ">
+    <div className="absolute top-4 right-[75px] hidden md:block "
+    style={{ cursor: `url('../../public/cursor (1).png'), auto` }}>
       <button
         type="button"
         className="rounded-full  h-[40px] w-[40px] font-bold text-silver bg-[#585676] undefined mx-3 transition duration-300 ease-in-out transform hover:scale-110"
@@ -18,7 +19,7 @@ export default function Temperatura({ changeF, changeC }) {
           changeC();
           paintSky();
         }}
-        style={{ backgroundColor: color2 }}
+        style={{ backgroundColor: color2, cursor: `url('../../public/cursor (1).png'), auto` }}
       >
         °C
       </button>
@@ -29,7 +30,7 @@ export default function Temperatura({ changeF, changeC }) {
           changeF();
           paintSky();
         }}
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: color, cursor: `url('../../public/cursor (1).png'), auto` }}
       >
         °F
       </button>

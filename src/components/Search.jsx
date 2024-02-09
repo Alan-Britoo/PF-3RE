@@ -48,12 +48,14 @@ export function Search({ inputSearch, cords }) {
           className="bg-gray-3 h-10 max-sm:w-[161px]
           sm:w-[190px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={toggleMenu}
+          style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
         >
           Search for places
         </button>
         <button
           className="flex justify-center items-center top-6 right-4 bg-gray-3 rounded-full p-3 w-[40px] h-[40px] transition duration-300 ease-in-out transform hover:bg-red-500 "
           onClick={cords}
+          style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
         >
           <SignalIcon />
         </button>
@@ -62,12 +64,10 @@ export function Search({ inputSearch, cords }) {
       <nav
         className={`${
           isMenuOpen ? "fixed" : "hidden"
-        } w-[100%] top-0 left-0 right-0 bottom-0 md:w-[400px] bg-blue-1 text-center items-center justify-center z-50 overflow-auto no-scrollbar p-3
-        
-        sm:w-[100%]`}
+        } w-[100%] top-0 left-0 right-0 bottom-0 md:w-[400px] bg-blue-1 text-center items-center justify-center z-50 overflow-auto no-scrollbar p-3 sm:w-[100%]`}
       >
-        <button className="flex ml-auto p-4" onClick={toggleMenu}>
-          <ExitIcon />
+        <button className="flex ml-auto p-4  hover:text-red-500 hover:scale-125" onClick={toggleMenu}  style={{ cursor: `url('../../public/cursor (1).png'), auto` }}>
+          <ExitIcon/>
         </button>
         <form className="flex gap-3" onSubmit={search}>
           <div
@@ -89,16 +89,20 @@ export function Search({ inputSearch, cords }) {
           <button
             type="submit"
             className="bg-blue-3 px-5 py-3 transition duration-300 ease-in-out transform hover:bg-red-500 "
+            style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
           >
             Search
           </button>
         </form>
-        <div className="flex flex-col py-10 gap-3">
+        <div className="flex flex-col py-10 gap-3"
+        style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
+        >
           {places?.map((place) => (
             <button
               className="flex w-full px-3 py-6 border hover:border border-transparent hover:border-gray-1 group"
               key={place}
               onClick={() => selectAndClose(place)}
+              style={{ cursor: `url('../../public/cursor (1).png'), auto` }}
             >
               <p>{place}</p>
               <span className="ml-auto hidden group-hover:block">
