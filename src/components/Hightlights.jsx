@@ -10,7 +10,7 @@ export default function Hightlights({ weatherData, isMph }) {
     > 
       <div
         className="grid md:grid-cols-1 md:m-0 gap-7 w-full   sm:grid-cols-1    lg:grid-cols-2   xl:grid-cols-2">
-        <article className="flex flex-col items-center bg-blue-1 max-sm:w-[100%] sm:w-[100%] h-[204px] px-[12px] py-[18px] transition duration-300 ease-in-out transform hover:bg-red-500">
+        <article className="flex flex-col items-center bg-blue-1 max-sm:w-[100%] sm:w-[100%] h-[204px] px-[12px] py-[18px] transition duration-300 ease-in-out transform hover:bg-red-500 hover:animate-pulse">
           <p className="text-base font-medium pb-2">Wind status</p>
           <p className="text-6xl font-bold">
 
@@ -28,7 +28,7 @@ export default function Hightlights({ weatherData, isMph }) {
           </div>
         </article>
 
-        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] py-4 px-12 transition duration-300 ease-in-out transform hover:bg-red-500 ">
+        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] py-4 px-12 transition duration-300 ease-in-out transform hover:bg-red-500 hover:animate-pulse ">
           <p className="text-base font-medium pb-2">Humidity</p>
           <p className="text-6xl font-bold">
             {weatherData.humidity}
@@ -48,7 +48,7 @@ export default function Hightlights({ weatherData, isMph }) {
           <span className="flex justify-end w-full">%</span>
         </article>
 
-        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] p-6 justify-center transition duration-300 ease-in-out transform hover:bg-red-500">
+        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] p-6 justify-center transition duration-300 ease-in-out transform hover:bg-red-500 hover:animate-pulse">
           <p className="text-base font-medium pb-2 ">Visibility</p>
           <p className="text-6xl font-bold">
             {weatherData.visibilityInMiles.toFixed(1)}{" "}
@@ -56,7 +56,7 @@ export default function Hightlights({ weatherData, isMph }) {
           </p>
         </article>
 
-        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] p-6 justify-center transition duration-300 ease-in-out transform hover:bg-red-500">
+        <article className="flex flex-col items-center bg-blue-1 w-[100%] h-[204px] p-6 justify-center transition duration-300 ease-in-out transform hover:bg-red-500 hover:animate-pulse">
           <p className="text-base font-medium pb-2">Air Pressure</p>
           <p className="text-6xl font-bold">
             {weatherData.airPressure}{" "}

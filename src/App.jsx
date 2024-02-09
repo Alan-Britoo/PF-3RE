@@ -142,13 +142,11 @@ function App() {
         <Search inputSearch={inputSearch} cords={cords} />
 
         <article
-          className="px-4 max-sm:py-[0] bg-blue-1 h-[860px] w-[100%] truncate max-sm:w-full 
-        sm:w-[100%] sm:h-[950px] md:h-screen
-        "
+          className="px-4 max-sm:py-[0] bg-blue-1 h-[860px] w-[100%] truncate max-sm:w-full sm:w-[100%] sm:h-[950px] md:h-screen "
         >
           <div className="flex flex-col items-center relative">
             <img
-              className="w-46 absolute m-[35px] mt-[70px] sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]"
+              className="w-[185px] absolute m-[35px] mt-[70px] sm:w-44 sm:h-44 sm:mt-[100px] max-sm:mt-[140px]"
               src={`/${weatherData.weather}.png`}
               alt={`/${weatherData.weather}`}
               style={{
@@ -160,31 +158,21 @@ function App() {
               onAnimationIteration={handleAnimationIteration}
             />
             <div
-              className="w-[100%] absolute  max-sm:w-[1200px] 
-                max-sm:pl-[180px]
-            sm:w-[850px]"
+              className="w-[100%] absolute  max-sm:w-[1100px] max-sm:pl-[110px] sm:w-[850px] "
             >
-              
               <img
-                className="h-auto opacity-10  
-                  max-sm:h-[450px]
-                sm:w-[900px] 
-
-                md:w-[650px] md:h-[376px] md:ml-[85px]
-                "
+                className="h-auto opacity-10 max-sm:h-[450px]  sm:w-[900px] md:w-[650px] md:h-[370px] md:ml-[85px] "
                 src={backGNuves}
                 alt=""
               />
             </div>
             <div
-              className="absolute mt-5 top-[270px]
-            
-            sm:top-[400px] max-sm:top-[375px]">
-              <p className="text-[144px] font-medium">
+              className="absolute mt-5  sm:top-[400px] max-sm:top-[375px] md:top-[340px] ">
+              <p className="text-[144px] font-medium ">
                 {isFahrenheit
                   ? Math.floor(weatherData.temp * (9 / 5) + 32)
                   : weatherData.temp}
-                <span className="text-gray-2 text-5xl">
+                <span className="text-gray-2 text-5xl ">
                   {isFahrenheit ? "°F" : "°C"}
                 </span>
               </p>
@@ -197,7 +185,7 @@ function App() {
                   <span>•</span>
                   <span>{weatherData.dateFormat}</span>
                 </div>
-                <div className="flex mt-5 gap-3">
+                <div className="flex mt-[5px] gap-3 animate-bounce">
                   <LocationIcon />
                   <p className="text-gray-2 text-lg font-semibold">
                     {weatherData.locationName}
