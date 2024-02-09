@@ -148,7 +148,7 @@ function App() {
         >
           <div className="flex flex-col items-center relative">
             <img
-              className="w-36 absolute m-[35px] mt-[70px] sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]"
+              className="w-46 absolute m-[35px] mt-[70px] sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]"
               src={`/${weatherData.weather}.png`}
               alt={`/${weatherData.weather}`}
               style={{
